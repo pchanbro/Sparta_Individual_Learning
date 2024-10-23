@@ -2,9 +2,9 @@
  반별학습
 ## 주차별 학습
 ### 1주차
-Week1_Rocket Launcher Challenge
+Week1_Rocket Launcher Challenge<br>
 https://teamsparta.notion.site/Week1_Rocket-Launcher-Challenge-1202dc3ef514814ebea5c6639a428504
 
 ### 2주차 
-Week2_Challenge
+Week2_Challenge<br>
 https://teamsparta.notion.site/Week2_Challenge-4d2995c1b4b9447a95fac292ffd1f2a0
