@@ -10,10 +10,10 @@ public class AchievementSlot : MonoBehaviour
 
     public void Init(AchievementSO data)
     {
-        data.isUnlocked = false;
-        titleTxt.text = data.displayName;
-        descTxt.text = data.displayDesc;
-        checkMark.SetActive(false);
+        //data.isUnlocked = false;
+        //titleTxt.text = data.displayName;
+        //descTxt.text = data.displayDesc;
+        //checkMark.SetActive(false);
     }
 
     public void MarkAsChecked()
