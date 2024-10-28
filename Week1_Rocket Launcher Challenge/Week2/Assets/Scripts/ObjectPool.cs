@@ -20,9 +20,9 @@ public class ObjectPool : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKey(KeyCode.V))
+        if(Input.GetKeyDown(KeyCode.V))
         {
-            CreateObject();
+            GetObject();
             Debug.Log($"현재 오브젝트 {pool.Count}개");
         }
     }
@@ -38,11 +38,40 @@ public class ObjectPool : MonoBehaviour
     public GameObject GetObject()
     {
         // [요구스펙 2] Get Object
+        foreach(GameObject obj in pool)
+        {
+            if(!obj.activeInHierarchy)
+            {
+                obj.SetActive(true);
+                return obj;
+            }
+        }
+
+        if(pool.Count < maxSize)
+        {
+            GameObject newObj = CreateObject();
+            pool.Add(newObj);
+            newObj.SetActive(true);
+            return newObj;
+        }
+        else
+        {
+            GameObject tempObj = Instantiate(objectPrefab);
+            tempObj.SetActive(true);
+            return tempObj;
+        }
     }
 
     public void ReleaseObject(GameObject obj)
     {
         // [요구스펙 3] Release Object
+        if(!pool.Contains(obj))
+        {
+            Destroy(obj);
+        }
+        else
+        {
+            obj.SetActive(false);
+        }
     }
-
 }
