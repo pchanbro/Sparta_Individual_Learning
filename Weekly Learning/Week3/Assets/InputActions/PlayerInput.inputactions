@@ -33,15 +33,6 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Setting",
-                    "type": "Button",
-                    "id": "bb3a7695-f32e-4aac-b584-8af00c972dc2",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Boost",
                     "type": "Button",
                     "id": "28c7c4e6-4d20-4c3b-9772-8721cfecfab8",
@@ -71,17 +62,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Look",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c421226b-cdab-4fcd-be02-c79b26675f31",
-                    "path": "<Keyboard>/tab",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Setting",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
