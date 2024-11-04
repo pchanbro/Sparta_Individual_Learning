@@ -3,6 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public interface IUIWindow
+{
+    public void ToggleWindow();
+}
+
 public class UIManager : MonoBehaviour
 {
     private static UIManager instance;
@@ -18,12 +23,12 @@ public class UIManager : MonoBehaviour
     }
 
     [SerializeField]
-    private UIController uiController;
-    public UIController UiController
-    {
-        get { return uiController; }
-        set { uiController = value; }
-    }
+    private SettingWindow settingWindow;
+    public SettingWindow SettingWindow { get { return settingWindow; } }
+
+    [SerializeField]
+    private UICondition uiCondition;
+    public UICondition UICondition { get { return uiCondition; } }
 
     private void Awake()
     {
@@ -40,6 +45,4 @@ public class UIManager : MonoBehaviour
             }
         }
     }
-
-    
 }

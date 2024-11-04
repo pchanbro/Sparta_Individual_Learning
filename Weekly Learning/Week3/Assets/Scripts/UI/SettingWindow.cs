@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class SettingWindow : MonoBehaviour
+public class SettingWindow : MonoBehaviour, IUIWindow
 {
     private TextMeshProUGUI text;
 
@@ -17,8 +17,21 @@ public class SettingWindow : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void ToggleShow()
+    public void ToggleWindow()
     {
-        UIManager.Instance.UiController.ToggleWindow(gameObject);
+        gameObject.SetActive(!IsOpen(gameObject));
+        ToggleCursor();
+    }
+
+    private bool IsOpen(GameObject gameObject)
+    {
+        return gameObject.activeInHierarchy;
+    }
+
+    void ToggleCursor()
+    {
+        bool toggle = Cursor.lockState == CursorLockMode.Locked;
+        Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
+        CharacterManager.Instance.Player.controller.canLook = !toggle;
     }
 }
